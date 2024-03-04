@@ -76,11 +76,11 @@ done
 [[ -z $ZEPHYR_VERSION ]] && ZEPHYR_VERSION="3.2"
 [[ -z $RUNWITH_DOCKER ]] && RUNWITH_DOCKER="true"
 
-[[ -z $OUTPUT_DIR ]] && OUTPUT_DIR="/mnt/d/zmk_urobs_3.2/firmware"
+[[ -z $OUTPUT_DIR ]] && OUTPUT_DIR="/mnt/d/Working_ZMK/firmware"
 [[ -z $LOG_DIR ]] && LOG_DIR="/tmp"
 
-[[ -z $HOST_ZMK_DIR ]] && HOST_ZMK_DIR="/mnt/d/zmk_urobs_3.2/zmk"
-[[ -z $HOST_CONFIG_DIR ]] && HOST_CONFIG_DIR="/mnt/d/zmk_urobs_3.2/zmk-config"
+[[ -z $HOST_ZMK_DIR ]] && HOST_ZMK_DIR="/mnt/d/Working_ZMK/zmk"
+[[ -z $HOST_CONFIG_DIR ]] && HOST_CONFIG_DIR="/mnt/d/Working_ZMK/zmk-config"
 
 [[ -z $DOCKER_ZMK_DIR ]] && DOCKER_ZMK_DIR="/workspace/zmk"
 [[ -z $DOCKER_CONFIG_DIR ]] && DOCKER_CONFIG_DIR="/workspace/zmk-config"

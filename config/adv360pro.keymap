@@ -26,7 +26,7 @@ ZMK_LAYER(base,
     &mo FN      &kp GRAVE       XXX             &kp LEFT    &kp RIGHT                                                           &kp UP      &kp DOWN        XXX             XXX                     &mo FN
                                                                         &kp LCTRL   &kp LALT            &kp LGUI    &kp RCTRL
                                                             &kp DEL     &kp SPACE   &mo SYM             &mo SYM     &kp ENTER   &kp BSPC
-                                                                                    &td0                &mo MOUSE
+                                                                                    &td0                &smart_mouse
     )
 
 ZMK_LAYER(num,
