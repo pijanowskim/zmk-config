@@ -48,7 +48,7 @@
 /* Homerow mods */
 
 #define KEYS_L 0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 42 43 44 45 46 47 54 55 56 57 58  // left hand
-#define KEYS_R 7 8 9 21 22 23 24 25 26 27 35 36 37 38 39 40 41 48 49 50 51 52 53 59 60 61 62 63  // right hand
+#define KEYS_R 7 8 9 10 11 12 13 21 22 23 24 25 26 27 35 36 37 38 39 40 41 48 49 50 51 52 53 59 60 61 62 63  // right hand
 #define THUMBS_L 64 65 68 69 70 74
 #define THUMBS_R 66 67 71 72 73 75
 #define THUMBS THUMBS_L THUMBS_R                         // thumbs
@@ -71,7 +71,7 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
-MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
+MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combos
 MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "
 MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
 
