@@ -62,16 +62,7 @@ ZMK_LAYER(mod,
                                                                                                 ___                             ___
 )
 
-ZMK_LAYER(sym,
-    ___       ___                   ___                     ___                     ___                     ___       ___                   ___       ___       ___       ___       ___       ___       ___
-    ___       &kp LEFT_BRACKET      &kp RIGHT_BRACKET       &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS   ___       ___                   ___       ___       ___       ___       ___       ___       ___
-    ___       &hml LCTRL LS(PLUS)   &hml LSHIFT MINUS       &hml LALT LS(ASTERISK)  &kp SLASH               &kp EQUAL ___                   ___       &kp SQT   &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT ___
-    ___       ___                   ___                     &kp LEFT_BRACE          &kp RIGHT_BRACE         ___                                       ___       ___       ___       ___       ___       ___
-    ___       ___                   ___                     ___                     ___                                                                         ___       ___       ___       ___       ___
-                                                                                                        ___       ___                   ___       ___
-                                                                                ___                     ___       ___                   ___       ___       ___
-                                                                                                                  ___                   ___
-)
+
 
 ZMK_LAYER(mouse,
                ___       ___       ___       ___       ___       ___       ___                  ___       ___       ___       ___       ___       ___       ___
@@ -85,12 +76,23 @@ ZMK_LAYER(mouse,
 )
 
 ZMK_LAYER(game,
-    ___    ___      ___      ___      ___          ___          ___                 ___         ___    ___    ___      ___      ___              ___
-    ___    ___      ___      ___      ___          ___          ___                 ___         ___    ___    ___      ___      ___              ___
-    ___    &kp A    &kp S    &kp D    ___          ___          ___                 ___         ___    ___    &kp K    &kp L    &kp SEMICOLON    ___
-    ___    ___      ___      ___      ___          ___                                          ___    ___    ___      ___      ___              ___
+    ___    ___      ___      ___      ___   ___     ___                 ___         ___    ___    ___      ___      ___              ___
+    ___    ___      ___      ___      ___   ___     ___                 ___         ___    ___    ___      ___      ___              ___
+    ___    &kp A    &kp S    &kp D    ___   ___     ___                 ___         ___    ___    &kp K    &kp L    &kp SEMICOLON    ___
+    ___    ___      ___      ___      ___   ___                                          ___    ___    ___      ___      ___              ___
     ___    ___      ___      ___      ___                                                              ___    ___      ___      ___              ___
-                                                   ___          ___                 ___         ___
-                                      ___          ___          &mo SYM             &mo SYM     ___    ___
-                                                                ___                 &smart_mouse 
+                                            ___     ___                 ___         ___
+                                      ___   ___     ___                 ___         ___    ___
+                                                    ___                 ___ 
+)
+
+ZMK_LAYER(sym,
+    ___       ___                   ___                     ___                     ___                     ___       ___                   ___       ___       ___       ___       ___       ___       ___
+    ___       &kp LEFT_BRACKET      &kp RIGHT_BRACKET       &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS   ___       ___                   ___       ___       ___       ___       ___       ___       ___
+    ___       &hml LCTRL LS(PLUS)   &hml LSHIFT MINUS       &hml LALT LS(ASTERISK)  &kp SLASH               &kp EQUAL ___                   ___       &kp SQT   &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT ___
+    ___       ___                   ___                     &kp LEFT_BRACE          &kp RIGHT_BRACE         ___                                       ___       ___       ___       ___       ___       ___
+    ___       ___                   ___                     ___                     ___                                                                         ___       ___       ___       ___       ___
+                                                                                                        ___       ___                   ___       ___
+                                                                                ___                     ___       ___                   ___       ___       ___
+                                                                                                                  ___                   ___
 )
