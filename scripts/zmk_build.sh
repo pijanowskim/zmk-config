@@ -92,12 +92,12 @@ done
 [[ -z $RUNWITH_DOCKER ]] && RUNWITH_DOCKER="true"
 [[ -z $MULTITHREAD ]] && MULTITHREAD="true"
 
-[[ -z $OUTPUT_DIR ]] && OUTPUT_DIR="$WINHOME/Downloads"
+[[ -z $OUTPUT_DIR ]] && OUTPUT_DIR="/mnt/d/Working_ZMK/firmware"
 [[ -z $LOG_DIR ]] && LOG_DIR="/tmp"
 
-[[ -z $HOST_ZMK_DIR ]] && HOST_ZMK_DIR="$HOME/zmk"
-[[ -z $HOST_MODULES_DIR ]] && HOST_MODULES_DIR="$HOME/zmk-modules"
-[[ -z $HOST_CONFIG_DIR ]] && HOST_CONFIG_DIR="$HOME/zmk-config"
+[[ -z $HOST_ZMK_DIR ]] && HOST_ZMK_DIR="/mnt/d/Working_ZMK/zmk"
+[[ -z $HOST_MODULES_DIR ]] && HOST_MODULES_DIR="/mnt/d/Working_ZMK/zmk-modules"
+[[ -z $HOST_CONFIG_DIR ]] && HOST_CONFIG_DIR="/mnt/d/Working_ZMK/zmk-config"
 
 [[ -z $DOCKER_ZMK_DIR ]] && DOCKER_ZMK_DIR="/workspace/zmk"
 [[ -z $DOCKER_MODULES_DIR ]] && DOCKER_MODULES_DIR="/workspace/zmk-modules"
@@ -112,13 +112,13 @@ done
 DOCKER_IMG="zmkfirmware/zmk-dev-arm:$ZEPHYR_VERSION"
 DOCKER_BIN="$SUDO podman"
 
-echo "Configured modules: $MODULES"
-MODULES=$(
-    echo $MODULES |
-        sed -z 's/[, \n]/;/g' | # use ; as separator
-        sed -r "s|([^;]*);|${DOCKER_MODULES_DIR}/\1;|g" | # insert modules root path
-        sed 's/;$/\n/' # remove final ;
-)
+#echo "Configured modules: $MODULES"
+#MODULES=$(
+#    echo $MODULES |
+#        sed -z 's/[, \n]/;/g' | # use ; as separator
+#        sed -r "s|([^;]*);|${DOCKER_MODULES_DIR}/\1;|g" | # insert modules root path
+#        sed 's/;$/\n/' # remove final ;
+#)
 
 # +-------------------------+
 # | AUTOMATE CONFIG OPTIONS |
