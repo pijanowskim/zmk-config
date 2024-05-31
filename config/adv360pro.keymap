@@ -42,8 +42,8 @@ ZMK_LAYER(base,
     &mo FN      &kp GRAVE       XXX             &kp LEFT    &kp RIGHT                                                           &kp UP      &kp DOWN        XXX             XXX                     &mo FN
                                                                         &kp LCTRL   &kp LALT            &kp LGUI    &kp RCTRL
                                                             &kp DEL     &kp SPACE   &mo SYM             &mo SYM     &kp ENTER   &kp BSPC
-                                                                                    &kp END             &mo MOUSE
-    )
+                                                                                    &kp END             &smart_mouse
+)
 
 ZMK_LAYER(num,
     ___         ___             ___             ___         ___         ___         ___                 ___         ___         &kp KP_NUM  &kp KP_EQUAL    &kp KP_DIVIDE   &kp KP_MULTIPLY         ___
@@ -67,27 +67,39 @@ ZMK_LAYER(fn,
                                                                                     ___                 ___
 )
 
-/* ZMK_LAYER(mod,
+// ZMK_LAYER(mod,
+//     ___         &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    ___                             ___                     &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 ___
+//     ___         ___             ___             ___             ___             ___             &bootloader                     &bootloader             ___             ___              ___          ___          ___          ___
+//     ___         ___             ___             ___             ___             ___             &rgb_ug RGB_MEFS_CMD 5          &rgb_ug RGB_MEFS_CMD 5  ___             ___              ___          ___          ___          ___
+//     ___         ___             ___             ___             ___             ___                                                                     ___             ___              ___          ___          ___          ___
+//     ___         ___             ___             &bl BL_INC      &bl BL_DEC                                                                                              &bl BL_INC       &bl BL_DEC   ___          ___          ___
+//                                                                                 &bt BT_CLR      &bt BT_CLR                      &bt BT_CLR              &bt BT_CLR
+//                                                                 &rgb_ug RGB_TOG &bl BL_TOG      ___                             ___                     &bl BL_TOG      &rgb_ug RGB_TOG
+//                                                                                                 ___                             ___
+// )
+ZMK_LAYER(mod,
     ___         &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    ___                             ___                     &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 ___
     ___         ___             ___             ___             ___             ___             &bootloader                     &bootloader             ___             ___              ___          ___          ___          ___
-    ___         ___             ___             ___             ___             ___             &rgb_ug RGB_MEFS_CMD 5          &rgb_ug RGB_MEFS_CMD 5  ___             ___              ___          ___          ___          ___
+    ___         ___             ___             ___             ___             ___             ___          ___  ___             ___              ___          ___          ___          ___
     ___         ___             ___             ___             ___             ___                                                                     ___             ___              ___          ___          ___          ___
     ___         ___             ___             &bl BL_INC      &bl BL_DEC                                                                                              &bl BL_INC       &bl BL_DEC   ___          ___          ___
                                                                                 &bt BT_CLR      &bt BT_CLR                      &bt BT_CLR              &bt BT_CLR
-                                                                &rgb_ug RGB_TOG &bl BL_TOG      ___                             ___                     &bl BL_TOG      &rgb_ug RGB_TOG
+                                                                &rgb_ug RGB_TOG &bl BL_TOG      ___                             ___                     &bl BL_TOG      ___
                                                                                                 ___                             ___
-) */
-
-ZMK_LAYER(sym,
-    ___       ___                   ___                     ___                     ___                     ___       ___                   ___       ___       ___       ___       ___       ___       ___
-    ___       &kp LEFT_BRACKET      &kp RIGHT_BRACKET       &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS   ___       ___                   ___       ___       ___       ___       ___       ___       ___
-    ___       &hml LCTRL LS(PLUS)   &hml LSHIFT MINUS       &hml LALT LS(ASTERISK)  &kp SLASH               &kp EQUAL ___                   ___       &kp SQT   &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT ___
-    ___       ___                   ___                     &kp LEFT_BRACE          &kp RIGHT_BRACE         ___                                       ___       ___       ___       ___       ___       ___
-    ___       ___                   ___                     ___                     ___                                                                         ___       ___       ___       ___       ___
-                                                                                                        ___       ___                   ___       ___
-                                                                                ___                     ___       ___                   ___       ___       ___
-                                                                                                                  ___                   ___
 )
+
+ZMK_LAYER(mouse,
+               ___       ___       ___       ___       ___       ___       ___                  ___       ___       ___       ___       ___       ___       ___
+               ___       ___       ___       ___       ___       ___       ___                  ___       ___       ___       ___       ___       ___       ___
+               ___       ___       ___       ___       ___       ___       ___                  ___       ___       U_MS_L    U_MS_U    U_MS_D    U_MS_R    ___
+               ___       ___       ___       ___       ___       ___                                      ___       &kp F       ___       ___       ___       ___
+               ___       ___       ___       U_MS_L    U_MS_R                                                       U_MS_U    U_MS_D    ___       ___       ___
+                                                                 &mkp LCLK    &mkp RCLK            ___       &mkp MCLK
+                                                       &mkp RCLK    &mkp LCLK    ___               ___       &mkp LCLK    &mkp RCLK
+                                                                           ___               ___
+)
+
+
 
 // ZMK_LAYER(mouse,
 //                ___       ___       ___       ___       ___       ___       ___                  ___       ___       ___       ___       ___       ___       ___
@@ -99,16 +111,7 @@ ZMK_LAYER(sym,
 //                                                        U_BTN1    U_BTN2    U_WH_L               ___       U_BTN2    U_BTN1
 //                                                                            U_WH_R               ___
 // ) error was in col 292, then in 464, then 782
-// ZMK_LAYER(mouse,
-//                ___       ___       ___       ___       ___       ___       ___                  ___       ___       ___       ___       ___       ___       ___
-//                ___       ___       ___       ___       ___       ___       ___                  ___       ___       ___       ___       ___       ___       ___
-//                ___       ___       ___       ___       ___       ___       ___                  ___       ___       U_MS_L    U_MS_U    U_MS_D    U_MS_R    ___
-//                ___       ___       ___       ___       ___       ___                                      ___       ___       ___       ___       ___       ___
-//                ___       ___       ___       U_MS_L    U_MS_R                                                       U_MS_U    U_MS_D    ___       ___       ___
-//                                                                  U_BTN1    U_BTN2               ___       U_BTN3
-//                                                        U_BTN1    U_BTN2    ___               ___       U_BTN2    U_BTN1
-//                                                                            ___               ___
-// )
+
 ZMK_LAYER(game,
     ___    ___      ___      ___      ___          ___          ___                 ___         ___    ___    ___      ___      ___              ___
     ___    ___      ___      ___      ___          ___          ___                 ___         ___    ___    ___      ___      ___              ___
@@ -120,6 +123,13 @@ ZMK_LAYER(game,
                                                                 ___                 ___ 
 )
 
-
-/* use urob's layout for Advantage 360 pro */
-// / { chosen { zmk,matrix_transform = &urobs_transform; }; };
+ZMK_LAYER(sym,
+    ___       ___                   ___                     ___                     ___                     ___       ___                   ___       ___       ___       ___       ___       ___       ___
+    ___       &kp LEFT_BRACKET      &kp RIGHT_BRACKET       &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS   ___       ___                   ___       ___       ___       ___       ___       ___       ___
+    ___       &hml LCTRL LS(PLUS)   &hml LSHIFT MINUS       &hml LALT LS(ASTERISK)  &kp SLASH               &kp EQUAL ___                   ___       &kp SQT   &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT ___
+    ___       ___                   ___                     &kp LEFT_BRACE          &kp RIGHT_BRACE         ___                                       ___       ___       ___       ___       ___       ___
+    ___       ___                   ___                     ___                     ___                                                                         ___       ___       ___       ___       ___
+                                                                                                        ___       ___                   ___       ___
+                                                                                ___                     ___       ___                   ___       ___       ___
+                                                                                                                ___                   ___
+)
