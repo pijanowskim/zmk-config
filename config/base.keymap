@@ -129,15 +129,19 @@ ZMK_TAP_DANCE(num_dance,
 )
 &num_word {  // num-word, requires PR #1451
     layers = <NUM>;
-//    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+    continue-list = <KP_NUM KP_EQUAL KP_DIVIDE KP_MULTIPLY KP_MINUS KP_PLUS KP_ENTER KP_DOT KP_N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 EQUAL BSPC DEL>;
 };
 
 // smart-mouse, requires PR #1366
 ZMK_TRI_STATE(smart_mouse,
     bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
-    ignored-key-positions = <29 43 56 58 THUMBS_L 37  38  39  40 59 60 67 72 73>;
+    ignored-key-positions = <29 43 THUMBS_L 37  38  39  40 67 72 73>;
     ignored-layers = <MOUSE>;
 )
+// &smart_mouse {
+//     layers = <MOUSE>;
+//     continue-list = <>;
+// }
 
 /* Custom behaviors */
 
