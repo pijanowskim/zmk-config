@@ -1,3 +1,4 @@
+layout: {qmk_keyboard: adv360}
 layers:
   base:
   - {t: '=', s: +}
