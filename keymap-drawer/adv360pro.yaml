@@ -1,3 +1,4 @@
+layout: {dts_layout: adv360pro.dtsi}
 layers:
   base:
   - '='
