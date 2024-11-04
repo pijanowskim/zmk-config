@@ -348,6 +348,7 @@ draw_config:
     }
 
 parse_config:
+  zmk_preamble: "#include <zmk-helpers/key-labels/adv360_custom.h>"
   skip_binding_parsing: false
   
   raw_binding_map:
