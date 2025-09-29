@@ -185,14 +185,24 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 
 /* Caps-word & auto-layers */
 
-// Tap: sticky-shift | Shift + tap/ double-tap: caps-word | Hold: shift.
-ZMK_MOD_MORPH(smart_shft,
-  bindings = <&sk LSHFT>, <&caps_word>;
-  mods = <(MOD_LSFT)>;
-)
-&caps_word { // Mods deactivate caps-word, requires PR #1451. [TODO: rebase]
-  /delete-property/ ignore-modifiers;
-};
+/* #define MAGIC_SHIFT &magic_shift LSHFT 0 */
+/* ZMK_HOLD_TAP(magic_shift, bindings = <&kp>, <&magic_shift_tap>; */
+/*              flavor = "hold-preferred"; tapping-term-ms = <200>; */
+/*              quick-tap-ms = <QUICK_TAP_MS>;) */
+/* ZMK_MOD_MORPH(magic_shift_tap, bindings = <&kp ENTER>, <&caps_word>; */
+/*               mods = <(MOD_LSFT)>;) */
+/**/
+/* // Tap: enter | Shift + tap/ double-tap: caps-word | Hold: shift. */
+/* ZMK_MOD_MORPH(smart_shft, */
+/*   bindings = <&kp ENTER>, <&caps_word>; */
+/*   mods = <(MOD_LSFT)>; */
+/* ) */
+/* &caps_word { // Mods deactivate caps-word, requires PR #1451. [TODO: rebase] */
+/*   /delete-property/ ignore-modifiers; */
+/* }; */
+// Tap: Enter | hold: shift
+ZMK_HOLD_TAP(shft_enter, bindings = <&kp>, <&kp>; flavor = "hold-preferred"; 
+              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 
 /* Custom behaviors */
 
@@ -250,7 +260,7 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &tog 4                                                           &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
         &kp ESC   &hml LCTRL A   &hml LALT S   &hml LGUI D  &hml LSHFT F      &kp G  &none           &kp LGUI &kp LCTRL &kp LALT  &kp LGUI           &kp ESC &kp H  &hmr RSHFT J  &hmr LGUI K  &hmr LALT L   &hmr LCTRL SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &none  &none &none                  &lt_spc 2 SPC &bs_del   &kp END  &kp PG_DN &kp ENTER &smart_shft          &kp RALT &none  &kp LBKT &kp RBKT &mo 2
+        &mo 2     &kp GRAVE &none  &none &none                  &lt_spc 2 SPC &bs_del   &kp END  &kp PG_DN &kp DEL &shft_enter LSHFT ENTER           &kp RALT &none  &kp LBKT &kp RBKT &mo 2
       >;
     };
     keypad {
@@ -260,7 +270,7 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
         &kp ESC   &hml LCTRL A   &hml LALT S   &hml LGUI D  &hml LSHFT F      &kp G  &none           &kp LGUI &kp LCTRL &kp LALT  &kp LGUI           &kp ESC &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-      &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &lt_spc 2 SPC &kp BSPC   &kp END  &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
+      &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &lt_spc 2 SPC &kp BSPC   &kp END  &kp PG_DN &kp DEL &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
       >;
     };
     fn {
@@ -270,7 +280,7 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
         &trans &kp TAB_LT &kp TAB_RT &swapper &kp LS(TAB) &trans  &none                                           &none &trans &kp HOME NAV_UP &kp PG_UP  &trans  &trans
         &trans &Win_Select_All &trans &trans &trans &kp LG(Q)  &none        &trans &trans &trans &trans        &none &caps_word NAV_LEFT NAV_DOWN NAV_RIGHT  NAV_DEL  &trans
         &trans &Win_Undo &Win_Cut &Win_Copy &Win_Paste &trans                      &trans &trans                     &trans &kp END &kp INS &kp PG_DN  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &kp LSHFT              &trans &trans &trans  &trans  &trans
       >;
     };
     mod {
@@ -290,7 +300,7 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &tog 4                                                           &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
         &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LGUI &kp LCTRL &kp LALT  &kp LGUI          &kp ESC &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp SPC &kp ENTER  &kp DEL  &kp PG_DN &kp ENTER &kp RSHFT          &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp SPC &kp BSPC  &kp DEL  &kp PG_DN &kp DEL &kp ENTER          &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
       >;
     };
     extra1 { 
