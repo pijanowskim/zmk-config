@@ -1,9 +1,9 @@
 # anarion's ZMK config
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
-configuration build upon excellent [config from urob](https://github.com/urob/zmk-config).
-It consists of a 42-keys base layout used on my Corneish-Zen
-and Kinesis Advantage 360 Pro layout.
+configuration build upon excellent
+[config from urob](https://github.com/urob/zmk-config). It consists of a 42-keys
+base layout used on my Corneish-Zen and Kinesis Advantage 360 Pro layout.
 
 ## Highlights
 
@@ -13,7 +13,8 @@ and Kinesis Advantage 360 Pro layout.
   document</kbd> on long-press
 - Simpler Devicetree syntax using helper macros from
   [zmk-helpers](https://github.com/urob/zmk-helpers)
-- Fully automated, nix-powered [local build environment](#local-build-environment)
+- Fully automated, nix-powered
+  [local build environment](#local-build-environment)
 
 ### Corneish-Zen
 
@@ -126,10 +127,10 @@ for many shells.)
 #### Drawing the keymap
 
 The build environment packages
-[keymap-drawer](https://github.com/caksoylar/keymap-drawer). `just draw <keyboard> <keymap>`
-parses relevant keymap for a given keyboard and draws it to `draw/keymap.svg`.
-For my two keyboards that is `just draw adv360 adv360` and
-`just draw corne_rotated corne`.
+[keymap-drawer](https://github.com/caksoylar/keymap-drawer).
+`just draw <keyboard> <keymap>` parses relevant keymap for a given keyboard and
+draws it to `draw/keymap.svg`. For my two keyboards that is
+`just draw adv360 adv360` and `just draw corne_rotated corne`.
 
 #### Hacking the firmware
 
@@ -149,10 +150,12 @@ version of ZMK and all modules specified in `config/west.yml`. Make sure to
 commit and push all local changes you have made to ZMK and the modules before
 running this command, as this will overwrite them.
 
-To upgrade the Zephyr SDK and Python build dependencies, use `just upgrade-sdk`. (Use with care --
-Running this will upgrade all Nix packages and may end up breaking the build environment. When in
-doubt, I recommend keeping the environment pinned to `flake.lock`, which is [continuously
-tested](https://github.com/urob/zmk-config/actions/workflows/test-build-env.yml) on all systems.)
+To upgrade the Zephyr SDK and Python build dependencies, use `just upgrade-sdk`.
+(Use with care -- Running this will upgrade all Nix packages and may end up
+breaking the build environment. When in doubt, I recommend keeping the
+environment pinned to `flake.lock`, which is
+[continuously tested](https://github.com/urob/zmk-config/actions/workflows/test-build-env.yml)
+on all systems.)
 
 ## Bonus: A (moderately) faster Github Actions Workflow
 
@@ -204,9 +207,9 @@ remaining issues:
     E.g, if your WPM is 70 or larger, then the default of 150ms (=10500/70)
     should work well. The rule of thumb is based on an average character length
     of 4.7 for English words. Taking into account 1 extra tap for `space`, this
-    yields a minimum `require-prior-idle-ms` of (60 _ 1000) / (5.7 _ x) ≈ 10500
-    / x milliseconds. The approximation errs on the safe side, as in practice
-    home row taps tend to be faster than average.
+    yields a minimum `require-prior-idle-ms` of (60 _1000) / (5.7_ x) ≈ 10500 /
+    x milliseconds. The approximation errs on the safe side, as in practice home
+    row taps tend to be faster than average.
 
 [^4]:
     `nix-direnv` provides a vastly improved caching experience compared to only
