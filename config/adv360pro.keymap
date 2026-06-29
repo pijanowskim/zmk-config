@@ -276,7 +276,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
           bindings = <&kp>, <&kp>;
       };
     };
-  chosen { zmk,matrix_transform = &urobs_transform; };
+  //chosen { zmk,matrix_transform = &urobs_transform; };
   keymap {
     compatible = "zmk,keymap";
     default_layer {

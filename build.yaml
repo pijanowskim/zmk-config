@@ -18,5 +18,7 @@ include:
   - board: corneish_zen_v1_right
   - board: adv360_left
   - board: adv360_right
+  - board: adv360pro_left
+  - board: adv360pro_right
   # - board: glove80_lh
   # - board: glove80_rh
